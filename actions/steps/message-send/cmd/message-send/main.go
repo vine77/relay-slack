@@ -16,20 +16,9 @@ type Spec struct {
 	// New-form API Token.
 	Connection *ConnectionSpec
 
-	// Old-form API token
-	APIToken string `spec:"apitoken"`
-
 	Channel  string
 	Message  string
 	Username string
-}
-
-func (s Spec) ConfiguredAPIToken() (string, bool) {
-	if s.Connection != nil {
-		return s.Connection.APIToken, s.Connection.APIToken != ""
-	}
-
-	return s.APIToken, s.APIToken != ""
 }
 
 func main() {
@@ -48,9 +37,10 @@ func main() {
 		log.FatalE(err)
 	}
 
-	tok, found := spec.ConfiguredAPIToken()
-	if !found {
+	if spec.Connection == nil {
 		log.Fatal("specify the Slack connection to use")
+	} else if spec.Connection.APIToken == "" {
+		log.Fatal("the specified connection must be a Slack connection")
 	} else if spec.Message == "" {
 		log.Fatal("specify the message to send to Slack")
 	} else if spec.Channel == "" {
@@ -61,7 +51,7 @@ func main() {
 		spec.Username = "Relay by Puppet"
 	}
 
-	api := slack.New(tok)
+	api := slack.New(spec.Connection.APIToken)
 	_, _, err = api.PostMessage(spec.Channel, slack.MsgOptionText(spec.Message, false), slack.MsgOptionUsername(spec.Username))
 	if err != nil {
 		log.FatalE(err)
