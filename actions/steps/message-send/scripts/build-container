@@ -38,9 +38,9 @@ done
 shift $(( OPTIND - 1 ))
 
 
-$DOCKER $DOCKER_ARGS build $DOCKER_BUILD_ARGS --tag sdk.nebula.localhost/intermediate/977502e5b1b0/slack-notification --file Dockerfile .
+$DOCKER $DOCKER_ARGS build $DOCKER_BUILD_ARGS --tag sdk.nebula.localhost/intermediate/c987a5f0b1b6/slack-step-message-send --file Dockerfile .
 
 for TAG in ${TAGS[@]+"${TAGS[@]}"}; do
-  $DOCKER $DOCKER_ARGS tag sdk.nebula.localhost/intermediate/977502e5b1b0/slack-notification "projectnebula/slack-notification:${TAG}" && \
-    printf "# Tagged %s:%s\n" projectnebula/slack-notification "${TAG}"
+  $DOCKER $DOCKER_ARGS tag sdk.nebula.localhost/intermediate/c987a5f0b1b6/slack-step-message-send "relaysh/slack-step-message-send:${TAG}" && \
+    printf "# Tagged %s:%s\n" relaysh/slack-step-message-send "${TAG}"
 done
