@@ -1,0 +1,10 @@
+apiVersion: integration/v1
+kind: Step
+name: message-send
+version: 1
+summary: Send a message to a Slack channel
+description: |
+  This step sends a message to a Slack channel.
+build:
+  apiVersion: build/v1
+  kind: Docker
