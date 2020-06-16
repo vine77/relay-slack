@@ -1,6 +1,6 @@
 apiVersion: integration/v1
 kind: Step
-name: message-send
+name: slack-step-message-send
 version: 1
 summary: Send a message to a Slack channel
 description: |
