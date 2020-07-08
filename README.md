@@ -2,25 +2,15 @@
 
 Integration with Slack for Puppet Relay.
 
-## External requirements
+## Steps
 
-_TBD_
+[relaysh/slack-step-message-send](steps/slack-step-message-send) - sends a message to a Slack channel
 
-## Getting started
+## Triggers
 
-_TBD_
-
-## Examples
-
-_TBD_
+None yet.
 
 ## Contributing
-
-### Issues
-
-Feel free to submit issues and enhancement requests.
-
-### Contributing
 
 In general, we follow the "fork-and-pull" Git workflow.
 
