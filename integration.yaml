@@ -48,7 +48,7 @@ owner:
   url: https://puppet.com
 
 # URL to this integration's documentation. Optional.
-homepage: https://github.com/relay-integrations/relay-stackery
+homepage: https://github.com/relay-integrations/relay-slack
 
 # URL to this integration's steps. Optional.
 stepsDirectory: https://github.com/relay-integrations/relay-slack/steps
