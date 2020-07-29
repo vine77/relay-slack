@@ -29,7 +29,7 @@ description: |
     Slack is a messaging tool for making communication fast and easy and great purveyor of custom emojis.
 
 # An array of descriptors for grouping integrations. Optional.
-keywords:
+tags:
   - Collaboration
 
 # License information. Optional. If not specified, this integration is assumed

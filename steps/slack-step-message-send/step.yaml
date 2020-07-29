@@ -13,7 +13,7 @@ name: slack-step-message-send
 image: relaysh/slack-step-message-send
 
 # An array of descriptors for grouping steps. Optional.
-keywords: null
+tags: null
 
 # The version of the action. Required. Must be an integer. If specified in the
 # directory name, must be exactly the version in the directory name.
