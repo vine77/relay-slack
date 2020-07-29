@@ -32,9 +32,6 @@ description: |
 keywords:
   - Collaboration
 
-# URL to this integration's logo. Optional.
-logo: https://github.com/relay-integrations/relay-slack/slack.svg
-
 # License information. Optional. If not specified, this integration is assumed
 # to be unlicensed proprietary code. Otherwise, must be a valid SPDX License
 # Expression (similar to npm) or an object referencing a license file.
@@ -46,15 +43,6 @@ owner:
   name: Puppet, Inc.
   email: relay@puppet.com
   url: https://puppet.com
-
-# URL to this integration's documentation. Optional.
-homepage: https://github.com/relay-integrations/relay-slack
-
-# URL to this integration's steps. Optional.
-stepsDirectory: https://github.com/relay-integrations/relay-slack/steps
-
-# URL to this integration's triggers. Optional.
-triggersDirectory: null
 
 # URL to this integration's source code. Optional. If the homepage is a GitHub
 # link, may be inferred automatically.
