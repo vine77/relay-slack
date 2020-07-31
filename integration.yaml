@@ -4,10 +4,10 @@ name: slack
 channel: stable
 version: v20200408
 summary: Slack
-description: |
+description: >
     Slack is a messaging tool for making communication fast and easy and great purveyor of custom emojis.
 tags:
-  - Collaboration
+  - collaboration
 license: Apache-2.0
 owner:
   name: Puppet, Inc.
