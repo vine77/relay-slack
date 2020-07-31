@@ -8,10 +8,6 @@ kind: Step
 # containing the action.
 name: slack-step-message-send
 
-# The image name for the action. Required. Must be exactly the name of the image
-# containing the action.
-image: relaysh/slack-step-message-send
-
 # An array of descriptors for grouping steps. Optional.
 tags: null
 
@@ -37,3 +33,10 @@ build:
 
   # The builder to use. Required.
   kind: Docker
+
+# Publishing information for this step. Optional.
+publish:
+  # The Docker repository to publish this image to. Optional. If not specified,
+  # this image cannot be pushed to external artifact storage. Tags will be
+  # automatically generated and must not be specified here.
+  repository: relaysh/slack-step-message-send
