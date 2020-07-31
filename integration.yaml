@@ -5,12 +5,12 @@ channel: stable
 version: v20200408
 summary: Slack
 description: |
-  This integration provides access to Slack workspaces, including the ability to
-  send a notification to a user or channel.
+    Slack is a messaging tool for making communication fast and easy and great purveyor of custom emojis.
+tags:
+  - Collaboration
 license: Apache-2.0
 owner:
   name: Puppet, Inc.
   email: relay@puppet.com
   url: https://puppet.com
-homepage: https://github.com/relay-integrations/relay-slack
 source: git://github.com/relay-integrations/relay-slack.git

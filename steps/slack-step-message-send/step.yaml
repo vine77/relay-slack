@@ -1,6 +1,7 @@
 apiVersion: integration/v1
 kind: Step
 name: slack-step-message-send
+tags: null
 version: 1
 summary: Send a message to a Slack channel
 description: |
@@ -8,3 +9,5 @@ description: |
 build:
   apiVersion: build/v1
   kind: Docker
+publish:
+  repository: relaysh/slack-step-message-send
