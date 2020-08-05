@@ -14,3 +14,4 @@ owner:
   email: relay@puppet.com
   url: https://puppet.com
 source: git://github.com/relay-integrations/relay-slack.git
+homepage: https://github.com/relay-integrations/relay-slack
