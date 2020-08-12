@@ -8,6 +8,9 @@ description: >
     Slack is a messaging tool for making communication fast and easy and great purveyor of custom emojis.
 tags:
   - collaboration
+  - messaging
+  - alerts
+  - alerting
 license: Apache-2.0
 owner:
   name: Puppet, Inc.

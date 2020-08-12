@@ -2,7 +2,7 @@ apiVersion: integration/v1
 kind: Step
 name: slack-step-message-send
 tags:
-  - communication
+  - collaboration
   - messaging
   - alerts
   - alerting
