@@ -5,7 +5,7 @@ channel: stable
 version: v20200408
 summary: Slack
 description: >
-    Slack is a messaging tool for making communication fast and easy and great purveyor of custom emojis.
+    Slack is a messaging tool for making communication fast and easy. And it's a great purveyor of custom emojis.
 tags:
   - collaboration
   - messaging
