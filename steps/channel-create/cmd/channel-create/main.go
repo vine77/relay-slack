@@ -2,6 +2,7 @@ package main
 
 import (
 	"flag"
+	"context"
 
 	"github.com/puppetlabs/relay-sdk-go/pkg/log"
 	"github.com/puppetlabs/relay-sdk-go/pkg/outputs"
@@ -69,7 +70,7 @@ func main() {
 	if client, err := outputs.NewDefaultOutputsClientFromNebulaEnv(); err != nil {
 		log.FatalE(err)
 	} else {
-		if err := client.SetOutput(context.Background(), "channelId", ch.ID); err != nil {
+		if err := client.SetOutput(context.Background(), "channelId", conv.ID); err != nil {
 			log.FatalE(err)
 		}
 	}
