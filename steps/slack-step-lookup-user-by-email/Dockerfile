@@ -1,5 +1,12 @@
+FROM python:3.8-alpine as base
+
+RUN apk add --update gcc musl-dev
+
+RUN pip install wheel && pip wheel slackclient --wheel-dir=/wheels
+
 FROM relaysh/core:latest-python
-RUN pip install slackclient
+COPY --from=base /wheels /wheels
+RUN pip install --no-index --find-links=/wheels slackclient
 COPY "./lookup-user-by-email.py" "/entrypoint.py"
 ENTRYPOINT []
 CMD ["python3", "/entrypoint.py"]
