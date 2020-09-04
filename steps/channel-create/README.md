@@ -9,7 +9,7 @@ This [Slack](https://slack.com) step creates a channel if it doesn't exist.
 | `connection` | Relay Connection | Connection to Slack requiring api token | None    | True     |
 | `channel`    | string           | Channel to create                       | None    | True     |
 | `topic`      | string           | Topic to set, if any                    | None    | False    |
-| `memberId`   | string           | User to invite, if any                  | None    | False    |
+| `memberID`   | string           | User to invite, if any                  | None    | False    |
 
 ## Outputs
 

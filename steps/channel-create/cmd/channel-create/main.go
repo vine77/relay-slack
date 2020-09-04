@@ -19,7 +19,7 @@ type Spec struct {
 
 	Channel  string
 	Topic    string
-	MemberId string
+	MemberID string
 }
 
 // This uses the new conversations api as the old channels api is deprecated
@@ -58,9 +58,9 @@ func main() {
 		}
 		log.Info("topic set!")
 	}
-	if spec.MemberId != "" {
+	if spec.MemberID != "" {
 		log.Info("inviting member...")
-		_, err = api.InviteUsersToConversation(conv.ID, spec.MemberId)
+		_, err = api.InviteUsersToConversation(conv.ID, spec.MemberID)
 		if err != nil {
 			log.FatalE(err)
 		}
