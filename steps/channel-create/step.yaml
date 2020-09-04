@@ -1,0 +1,29 @@
+apiVersion: integration/v1
+kind: Step
+name: slack-step-channel-create
+tags:
+  - collaboration
+  - messaging
+  - alerts
+  - alerting
+version: 1
+summary: Create a Slack channel
+description: |
+  This step creates a Slack channel and invites a user.
+build:
+  apiVersion: build/v1
+  kind: Docker
+publish:
+  repository: relaysh/slack-step-channel-create
+examples:
+- summary: Create a new Slack room
+  content:
+    apiVersion: v1
+    kind: Step
+    name: create-channel
+    image: relaysh/slack-step-channel-create
+    spec:
+      connection: !Connection { type: slack, name: my-slack-account}
+      channel: "new-channel-name"
+      topic: "The New Hot Topic"
+      memberID: "UDHPDS88Z"

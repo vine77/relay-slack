@@ -30,7 +30,7 @@ In order to connect to Slack you will need to **Create a new Slack app** at [htt
 * In Relay, go to the **Connections** tab and click **Add connection**. Choose **Slack** from the drop-down.
 * Give the connection a name which you'll reference in your workflows and paste the token in.
 
-## Example  
+## Example
 
 ```yaml
 parameters:
@@ -44,4 +44,6 @@ steps:
   spec:
     connection: !Connection { type: slack, name: my-slack-account}
     channel: !Fn.concat ["incident-", !Parameter incidentNumber]
+    topic: !Fn.concat ["Addressing incident ", !Parameter incidentNumber]
+    memberID: "UDHPDS88Z"
 ```
