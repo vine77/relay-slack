@@ -70,7 +70,7 @@ func main() {
 	if client, err := outputs.NewDefaultOutputsClientFromNebulaEnv(); err != nil {
 		log.FatalE(err)
 	} else {
-		if err := client.SetOutput(context.Background(), "channelId", conv.ID); err != nil {
+		if err := client.SetOutput(context.Background(), "channelID", conv.ID); err != nil {
 			log.FatalE(err)
 		}
 	}
