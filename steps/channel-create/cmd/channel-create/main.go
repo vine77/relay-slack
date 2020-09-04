@@ -16,7 +16,8 @@ type Spec struct {
 	// New-form API Token.
 	Connection *ConnectionSpec
 
-	Channel  string
+	Channel string
+	Topic   string
 }
 
 func main() {
@@ -36,10 +37,22 @@ func main() {
 		log.Fatal("specify the channel to create")
 	}
 
+	log.Info("connecting to slack api...")
 	api := slack.New(spec.Connection.APIToken)
-	_, err := api.CreateChannel(spec.Channel)
+	log.Info("connected!")
+	log.Info("creating channel...")
+	ch, err := api.CreateChannel(spec.Channel)
 	if err != nil {
 		log.FatalE(err)
+	}
+	log.Info("channel was created!")
+	if spec.Topic != "" {
+		log.Info("setting topic...")
+		_, err = api.SetChannelTopic(ch.ID, spec.Topic)
+		if err != nil {
+			log.FatalE(err)
+		}
+		log.Info("topic set!")
 	}
 }
 
