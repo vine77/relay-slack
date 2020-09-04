@@ -4,7 +4,7 @@ import (
 	"flag"
 
 	"github.com/puppetlabs/relay-sdk-go/pkg/log"
-	"github.com/puppetlabs/relay-sdk-go/pkg/output"
+	"github.com/puppetlabs/relay-sdk-go/pkg/outputs"
 	"github.com/puppetlabs/relay-sdk-go/pkg/taskutil"
 	"github.com/slack-go/slack"
 )
@@ -17,10 +17,13 @@ type Spec struct {
 	// New-form API Token.
 	Connection *ConnectionSpec
 
-	Channel string
-	Topic   string
+	Channel  string
+	Topic    string
+	MemberId string
 }
 
+// This uses the new conversations api as the old channels api is deprecated
+// https://api.slack.com/changelog/2020-01-deprecating-antecedents-to-the-conversations-api
 func main() {
 	var (
 		specURL = flag.String("spec-url", mustGetDefaultMetadataSpecURL(), "url to fetch the spec from")
@@ -42,23 +45,31 @@ func main() {
 	api := slack.New(spec.Connection.APIToken)
 	log.Info("connected!")
 	log.Info("creating channel...")
-	ch, err := api.CreateChannel(spec.Channel)
+	conv, err := api.CreateConversation(spec.Channel, false)
 	if err != nil {
 		log.FatalE(err)
 	}
 	log.Info("channel was created!")
 	if spec.Topic != "" {
 		log.Info("setting topic...")
-		_, err = api.SetChannelTopic(ch.ID, spec.Topic)
+		_, err = api.SetTopicOfConversation(conv.ID, spec.Topic)
 		if err != nil {
 			log.FatalE(err)
 		}
 		log.Info("topic set!")
 	}
+	if spec.MemberId != "" {
+		log.Info("inviting member...")
+		_, err = api.InviteUsersToConversation(conv.ID, spec.MemberId)
+		if err != nil {
+			log.FatalE(err)
+		}
+		log.Info("member invited!")
+	}
 	if client, err := outputs.NewDefaultOutputsClientFromNebulaEnv(); err != nil {
 		log.FatalE(err)
 	} else {
-		if err := client.SetOutput(context.Background(), "channelID", ch.ID); err != nil {
+		if err := client.SetOutput(context.Background(), "channelId", ch.ID); err != nil {
 			log.FatalE(err)
 		}
 	}

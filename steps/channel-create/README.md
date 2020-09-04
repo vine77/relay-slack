@@ -8,7 +8,14 @@ This [Slack](https://slack.com) step creates a channel if it doesn't exist.
 |--------------|------------------|-----------------------------------------|---------|----------|
 | `connection` | Relay Connection | Connection to Slack requiring api token | None    | True     |
 | `channel`    | string           | Channel to create                       | None    | True     |
+| `topic`      | string           | Topic to set, if any                    | None    | False    |
+| `memberId`   | string           | User to invite, if any                  | None    | False    |
 
+## Outputs
+
+| Name        | Data type | Description                 |
+|-------------|-----------|-----------------------------|
+| `channelID` | String    | The id of the slack channel |
 
 In order to connect to Slack you will need to **Create a new Slack app** at [https://api.slack.com/apps/](https://api.slack.com/apps?new_app=1), then:
 
@@ -32,7 +39,7 @@ parameters:
 
 steps:
 # ...
-- name: notify-slack
+- name: create-channel
   image: relaysh/slack-step-channel-create
   spec:
     connection: !Connection { type: slack, name: my-slack-account}

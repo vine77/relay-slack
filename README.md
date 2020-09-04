@@ -5,6 +5,7 @@ Integration with Slack for Puppet Relay.
 ## Steps
 
 [relaysh/slack-step-message-send](steps/slack-step-message-send) - sends a message to a Slack channel
+[relaysh/channel-create](steps/channel-create) - creates a Slack channel and sets a topic
 
 ## Triggers
 
