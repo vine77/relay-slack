@@ -4,6 +4,7 @@ import (
 	"flag"
 
 	"github.com/puppetlabs/relay-sdk-go/pkg/log"
+	"github.com/puppetlabs/relay-sdk-go/pkg/output"
 	"github.com/puppetlabs/relay-sdk-go/pkg/taskutil"
 	"github.com/slack-go/slack"
 )
@@ -53,6 +54,13 @@ func main() {
 			log.FatalE(err)
 		}
 		log.Info("topic set!")
+	}
+	if client, err := outputs.NewDefaultOutputsClientFromNebulaEnv(); err != nil {
+		log.FatalE(err)
+	} else {
+		if err := client.SetOutput(context.Background(), "channelID", ch.ID); err != nil {
+			log.FatalE(err)
+		}
 	}
 }
 
