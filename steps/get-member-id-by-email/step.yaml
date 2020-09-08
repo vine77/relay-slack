@@ -1,0 +1,28 @@
+apiVersion: integration/v1
+kind: Step
+name: slack-step-get-member-id-by-email
+tags:
+  - collaboration
+  - messaging
+  - alerts
+  - alerting
+version: 1
+summary: Gets a member id by email
+description: |
+  This step allows you to provide a users email address so that you can retreive their member id in Slack.
+build:
+  apiVersion: build/v1
+  kind: Docker
+publish:
+  repository: relaysh/slack-step-get-member-id-by-email
+schemas:
+  spec:
+    source: file
+    file: spec.schema.json
+  outputs: 
+    $schema: 'http://json-schema.org/draft-07/schema#'
+    type: object
+    properties:
+      memberID:
+        type: string
+    required: [memberID]

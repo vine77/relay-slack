@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "connection": {
+      "type": "object",
+      "x-relay-connection-type": "slack",
+      "description": "A Relay Slack connection to use",
+      "properties": {
+        "apiToken": {
+          "type": "string",
+          "description": "The Slack App OAuth token to use"
+        }
+      },
+      "required": [
+        "apiToken"
+      ]
+    },
+    "email": {
+      "type": "string",
+      "description": "The email of the slack user you'd like to retreive the member id of"
+    }
+  },
+  "required": [
+    "email"
+  ],
+  "additionalProperties": false
+}
