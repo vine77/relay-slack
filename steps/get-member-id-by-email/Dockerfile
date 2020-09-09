@@ -7,7 +7,7 @@ RUN pip install wheel && pip wheel slackclient --wheel-dir=/wheels
 FROM relaysh/core:latest-python
 COPY --from=base /wheels /wheels
 RUN pip install --no-index --find-links=/wheels slackclient
-COPY "./lookup-user-by-email.py" "/entrypoint.py"
+COPY "./get-member-id-by-email.py" "/entrypoint.py"
 ENTRYPOINT []
 CMD ["python3", "/entrypoint.py"]
 
