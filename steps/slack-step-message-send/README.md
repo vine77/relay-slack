@@ -2,16 +2,6 @@
 
 This [Slack](https://slack.com) step sends a message to a desired channel.
 
-## Specification
-
-| Setting | Data type | Description | Default | Required |
-|---------|-----------|-------------|---------|----------|
-| `connection` | Relay Connection   | Connection to Slack requiring api token | None | True |
-| `channel` | string | Channel to send message to | None | True | 
-| `username` | string | Username to send message as | None | True | 
-| `message` | string | Message to send | None | True | 
-
-
 In order to connect to Slack you will need to **Create a new Slack app** at [https://api.slack.com/apps/](https://api.slack.com/apps?new_app=1), then:
 
 * Give it a name like "Notifications from Relay.sh"

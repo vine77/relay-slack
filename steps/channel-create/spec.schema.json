@@ -16,14 +16,22 @@
         "apiToken"
       ]
     },
-    "email": {
+    "channel": {
       "type": "string",
-      "description": "The email of the slack user you'd like to retrieve the member id of"
+      "description": "Channel to create"
+    },
+    "topic": {
+      "type": "string",
+      "description": "Topic to set, if any."
+    },
+    "memberID": {
+      "type": "string",
+      "description": "User to invite, if any."
     }
   },
   "required": [
     "connection",
-    "email"
+    "channel"
   ],
   "additionalProperties": false
 }

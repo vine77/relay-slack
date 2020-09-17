@@ -15,3 +15,7 @@ build:
   kind: Docker
 publish:
   repository: relaysh/slack-step-message-send
+schemas:
+  spec:
+    source: file
+    file: spec.schema.json
