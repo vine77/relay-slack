@@ -1,6 +1,6 @@
 apiVersion: integration/v1
 kind: Step
-name: slack-step-message-send
+name: message-send
 tags:
   - collaboration
   - messaging
@@ -15,3 +15,7 @@ build:
   kind: Docker
 publish:
   repository: relaysh/slack-step-message-send
+schemas:
+  spec:
+    source: file
+    file: spec.schema.json

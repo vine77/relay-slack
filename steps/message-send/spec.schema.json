@@ -16,14 +16,24 @@
         "apiToken"
       ]
     },
-    "email": {
+    "channel": {
       "type": "string",
-      "description": "The email of the slack user you'd like to retrieve the member id of"
+      "description": "Channel to send message to."
+    },
+    "username": {
+      "type": "string",
+      "description": "Username to send message as."
+    },
+    "message": {
+      "type": "string",
+      "description": "Message to send."
     }
   },
   "required": [
     "connection",
-    "email"
+    "channel",
+    "username",
+    "message"
   ],
   "additionalProperties": false
 }
