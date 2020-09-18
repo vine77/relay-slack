@@ -1,6 +1,6 @@
 apiVersion: integration/v1
 kind: Step
-name: slack-step-get-member-id-by-email
+name: get-member-id-by-email
 tags:
   - collaboration
   - messaging

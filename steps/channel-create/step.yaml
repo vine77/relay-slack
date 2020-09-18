@@ -1,6 +1,6 @@
 apiVersion: integration/v1
 kind: Step
-name: slack-step-channel-create
+name: channel-create
 tags:
   - collaboration
   - messaging
