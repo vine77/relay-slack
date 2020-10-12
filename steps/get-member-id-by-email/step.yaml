@@ -26,3 +26,13 @@ schemas:
       memberID:
         type: string
     required: [memberID]
+examples:
+- summary: Get member ID by email
+  content:
+    apiVersion: v1
+    kind: Step
+    name: slack-get-member-id-by-email
+    image: relaysh/slack-step-get-member-id-by-email
+    spec:
+      connection: !Connection { type: slack, name: my-slack-account}
+      email: "foo@example.com"

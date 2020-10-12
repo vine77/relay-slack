@@ -20,21 +20,3 @@ In order to connect to Slack you will need to **Create a new Slack app** at [htt
 * Once approved and installed, you'll see a **Bot User OAuth Access Token** on the site.
 * In Relay, go to the **Connections** tab and click **Add connection**. Choose **Slack** from the drop-down.
 * Give the connection a name which you'll reference in your workflows and paste the token in.
-
-## Example
-
-```yaml
-parameters:
-  incidentNumber:
-    description: "The incident number being addressed by this war room"
-
-steps:
-# ...
-- name: create-channel
-  image: relaysh/slack-step-channel-create
-  spec:
-    connection: !Connection { type: slack, name: my-slack-account}
-    channel: !Fn.concat ["incident-", !Parameter incidentNumber]
-    topic: !Fn.concat ["Addressing incident ", !Parameter incidentNumber]
-    memberID: "UDHPDS88Z"
-```

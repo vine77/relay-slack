@@ -19,3 +19,15 @@ schemas:
   spec:
     source: file
     file: spec.schema.json
+examples:
+- summary: Send a message
+  content:
+    apiVersion: v1
+    kind: Step
+    name: send-message
+    image: relaysh/slack-step-message-send
+    spec:
+      channel: !Parameter slack-channel
+      connection: !Connection { type: slack, name: my-slack-account}
+      message: "hello Relay!"
+      username: "Relay Workflows"
