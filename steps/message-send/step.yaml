@@ -29,5 +29,5 @@ examples:
     spec:
       channel: !Parameter slack-channel
       connection: !Connection { type: slack, name: my-slack-account}
-      message: "hello Relay!"
-      username: "Relay Workflows"
+      message: !Parameter message # Example: "hello Relay!"
+      username: !Parameter username # Example: "Relay Workflows"

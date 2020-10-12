@@ -24,9 +24,9 @@ examples:
     image: relaysh/slack-step-channel-create
     spec:
       connection: !Connection { type: slack, name: my-slack-account}
-      channel: "new-channel-name"
-      topic: "The New Hot Topic"
-      memberID: "UDHPDS88Z"
+      channel: !Parameter channel-name # Example: "relay-notifications"
+      topic: !Parameter channel-topic # Example: "Notifications for Relay workflows"
+      memberID: !Parameter memberID # Example: "UDHPDS88Z"
 schemas:
   spec:
     source: file

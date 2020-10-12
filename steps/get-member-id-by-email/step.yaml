@@ -35,4 +35,4 @@ examples:
     image: relaysh/slack-step-get-member-id-by-email
     spec:
       connection: !Connection { type: slack, name: my-slack-account}
-      email: "foo@example.com"
+      email: !Parameter email # Example: "foo@example.com"
