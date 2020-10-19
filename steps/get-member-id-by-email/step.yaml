@@ -7,7 +7,7 @@ tags:
   - alerts
   - alerting
 version: 1
-summary: Gets a member id by email
+summary: Get member id by email
 description: |
   This step allows you to provide a users email address so that you can retreive their member id in Slack.
 build:
